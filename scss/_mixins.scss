@@ -1,0 +1,9 @@
+@mixin font{
+  color: #ffffff;
+  font-family: 'open_sans';
+  font-weight: lighter;
+}
+
+@mixin header-flex{
+  align-self: center;
+}
