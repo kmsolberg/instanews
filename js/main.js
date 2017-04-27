@@ -1,6 +1,7 @@
 $(function () {
   var storyGrid = "";
   var picture = "";
+  var results = "";
   $('#section').change(function (event) {
     event.preventDefault();
     $('header').css('height', 'auto');
@@ -14,12 +15,15 @@ $(function () {
     method: 'GET',
   }).done(function(data) {
     $.each(data.results, function ( key, value ) {
-      if (value.multimedia[3]) {
-        picture = value.multimedia[3].url
+      if (value.multimedia[4]) {
+        picture = value.multimedia[4].url
         storyGrid += '<li><img src="' + picture + '">' + value.abstract + '</li>'  
+        results = storyGrid arr.slice(0, 11);
       }
+      
+
     });
-    console.log(storyGrid);
+    console.log(results);
     $(".stories").append(storyGrid);
   }).fail(function(err) {
     throw err;
