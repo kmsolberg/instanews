@@ -2,7 +2,10 @@ $(function () {
   var storyGrid = "";
   var picture = "";
   var results = "";
+  var link = "";
+ 
   $('#section').change(function (event) {
+    var index = 0;
     event.preventDefault();
     $('header').css('height', 'auto');
     $('.loading').before('<img src="assets/images/ajax-loader.gif" id="loading-gif">');
@@ -14,30 +17,18 @@ $(function () {
     url: urlSource,
     method: 'GET',
   }).done(function(data) {
-    $.each(data.results, function ( key, value ) {
-      if (value.multimedia[4]) {
-        picture = value.multimedia[4].url
-        storyGrid += '<li><img src="' + picture + '">' + value.abstract + '</li>'  
-        results = storyGrid arr.slice(0, 11);
-      }
-      
-
+      $.each(data.results, function ( key, value ) {
+        if (value.multimedia[4]) {
+            if (index < 12) {
+              picture = value.multimedia[4].url,
+              link = value.url,
+              storyGrid = '<li><img src="' + picture + '">' + value.abstract + '</li>';
+              $(storyGrid).wrap('<a' + link + '/>');  
+              index++
+              $(".stories").append(storyGrid);
+            }
+        }
+      })
     });
-    console.log(results);
-    $(".stories").append(storyGrid);
-  }).fail(function(err) {
-    throw err;
-    });  
   });
 });
-
-// $.ajax({
-//       method: 'GET',
-//       dataType: 'jsonp',
-//       url: 'https://itunes.apple.com/search?entity=album&limit=6&term=' + artist, 
-//     }).done(function(data) {
-//       console.log(data);
-//       $.each(data.results, function( key, value ){
-//         console.log(value)
-//         albumList += '<li><img src=' + value.artworkUrl60 + '>' + value.collectionName + '</li>'
-//     });
