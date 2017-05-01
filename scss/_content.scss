@@ -90,16 +90,22 @@ body {
   flex-flow: column nowrap;
   justify-content: center;
   text-align: center;
+  align-self: center;
+  width: 15rem;
 
   @include tablet{
     padding: 0 5rem;
   }
 }
 
-#section, .logo, header p {@include header-flex}
+#section, .logo, header p, .selectric {@include header-flex}
 
 #section {
   padding: 0.5rem;
+}
+
+.selectric{
+  margin: 1rem 0;
 }
 
 .stories{
