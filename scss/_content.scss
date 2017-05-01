@@ -144,16 +144,6 @@ a {
   flex: 0 0 100%;
   display: flex;
   flex-direction: column-reverse; 
-  position: relative;
-  overflow: hidden;
-  transition-duration: 1s;
-  transition-timing-function: ease-out;
-
-  &:hover p {
-    transition-duration: 0.5s;
-    transition-timing-function: ease-out;
-    bottom: 0;
-  }
 
   @include tablet{
     flex: 0 0 33.3333%;
@@ -161,6 +151,16 @@ a {
     height: 5rem;
     background-position: center;
     align-self: flex-end;
+    position: relative;
+    overflow: hidden;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+
+    &:hover p {
+      transition-duration: 0.5s;
+      transition-timing-function: ease-out;
+      bottom: 0;
+    }
   }
 
   @include desktop{
@@ -172,12 +172,12 @@ a {
   background: rgba(black, 0.25);
   font-size: 1.2rem;
   line-height: 1.8rem;
-  position: absolute;
-  bottom: -10rem;
   
   @include tablet{
     font-size: 0.7rem;
     line-height: 1rem;
+    position: absolute;
+    bottom: -10rem; 
   }
 }
 
