@@ -14,40 +14,45 @@ body {
 }
 
 .header-landing{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    height: 90vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  height: 90vh;
+  overflow:hidden;
+  transform: scaleY(auto);
+  transition: transform 500ms ease;
 
-    .logo{
-      padding: 10rem 0 5rem 0;
-      height: 35%;
-    
-      @include tablet{
-        height: 20%;
-        padding: 0;
-      }
-
-      @include desktop{
-        height: 38%;
-        padding-left: 3rem;
-      }
-    }
-
+  .logo{
+    padding: 10rem 0 5rem 0;
+    height: 35%;
+  
     @include tablet{
-      flex-flow: row nowrap;  
+      height: 20%;
+      padding: 0;
     }
 
     @include desktop{
-      justify-content: flex-start;
+      height: 38%;
+      padding-left: 3rem;
     }
+  }
+
+  @include tablet{
+    flex-flow: row nowrap;  
+  }
+
+  @include desktop{
+    justify-content: flex-start;
+  }
 }
 
 .short-header{
   height: auto;
   display: flex;
+  flex: 0;
   flex-flow: column nowrap;
   justify-content: center;
+  transform: scaleY(auto);
     @include tablet{
       flex-flow: row nowrap;
     }
