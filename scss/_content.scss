@@ -2,10 +2,15 @@ body {
   @include font;
   background-color: black;
   box-sizing: border-box;
+  margin: auto;
 }
 
 #loading-gif{
     height: 5rem;
+}
+
+.container{
+  width: 100%;
 }
 
 .header-landing{
@@ -22,10 +27,19 @@ body {
         height: 20%;
         padding: 0;
       }
+
+      @include desktop{
+        height: 38%;
+        padding-left: 3rem;
+      }
     }
 
     @include tablet{
       flex-flow: row nowrap;  
+    }
+
+    @include desktop{
+      justify-content: flex-start;
     }
 }
 
@@ -34,21 +48,41 @@ body {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+    @include tablet{
+      flex-flow: row nowrap;
+    }
     
     .logo{
     padding: 2rem 0;
     height: 9rem;
     
-    @include tablet{
-      height: 20%;
-      padding: 0;
+      @include tablet{
+        padding: 1.5rem 0;
+        height: 3rem;
+      }
+
+      @include desktop{
+        height: 8rem;
+      }
     }
+
+    @include desktop{
+      justify-content: flex-start;
     }
 }
 
 #section{
   width: 8rem;
   margin: 2rem;
+
+  @include tablet{
+    margin: 1rem;
+    width: 6rem;
+  }
+
+  @include desktop{
+    width: 8rem;
+  }
 }
 
 .choose {
@@ -56,6 +90,10 @@ body {
   flex-flow: column nowrap;
   justify-content: center;
   text-align: center;
+
+  @include tablet{
+    padding: 0 5rem;
+  }
 }
 
 #section, .logo, header p {@include header-flex}
@@ -68,10 +106,24 @@ body {
   display: flex;
   justify-content: flex-end;
   flex-flow: column nowrap;
+
+  @include tablet{
+    flex-flow: row wrap;
+  }
 }
 
 a {
   @include font;
+  
+  @include tablet{
+    width: 33.333%;
+    font-size: 1rem;
+  }
+
+  @include desktop{
+    width: 25%;
+  }
+
   &:hover {
     @include font;
   }
@@ -84,12 +136,29 @@ a {
   background-repeat: no-repeat;
   padding-top: 95%;
   flex: 0 0 100%;
+
+  @include tablet{
+    flex: 0 0 33.3333%;
+    padding-top: 115%;
+    height: 5rem;
+    background-position: center;
+    align-self: flex-end;
+  }
+
+  @include desktop{
+    flex: 0 0 25%;
+  }
 }
 
 #story p{
   background: rgba(black, 0.25);
   font-size: 1.2rem;
   line-height: 1.8rem;
+  
+  @include tablet{
+    font-size: 0.7rem;
+    line-height: 1rem;
+  }
 }
 
 footer{ 
@@ -98,5 +167,18 @@ footer{
   p{
     color: #c2c2c2;
     text-align: center;
+
+    @include tablet{
+      font-size: .7rem;
+    }
+    
+    @include desktop{
+      text-align: left;
+      font-size: 1rem;
+      padding-left: 2rem;
+    } 
+
   }
+
+
 }
