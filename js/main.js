@@ -1,13 +1,13 @@
 $(function () {
   var storyGrid = "";
   var picture = "";
-  var results = "";
   var link = "";
  
   $('#section').change(function (event) {
     var index = 0;
     event.preventDefault();
-    $('header').css('height', 'auto');
+    $('.header-landing').removeClass().addClass('short-header');
+    $('.stories').empty();
     $('.loading').before('<img src="assets/images/ajax-loader.gif" id="loading-gif">');
     var selection = $('#section option').filter(':selected').val();
     var urlSource = "https://api.nytimes.com/svc/topstories/v2/" + selection + ".json"
@@ -16,19 +16,23 @@ $(function () {
     $.ajax({
     url: urlSource,
     method: 'GET',
-  }).done(function(data) {
+   }).done(function(data) {
       $.each(data.results, function ( key, value ) {
         if (value.multimedia[4]) {
             if (index < 12) {
               picture = value.multimedia[4].url,
               link = value.url,
-              storyGrid = '<li><img src="' + picture + '">' + value.abstract + '</li>';
-              $(storyGrid).wrap('<a' + link + '/>');  
+              storyGrid = '<a href=' + link + '>' + '<li id="story" style="background-image:url(' + picture + ')">' 
+              + '<p>' + value.abstract + '</p></li></a>';
               index++
               $(".stories").append(storyGrid);
             }
         }
-      })
+      });
+    }).fail(function () {
+      $('.stories').append('<li>"Error, Try Again Later"</li>');
+    }).always(function() {
+      $('#loading-gif').remove();
     });
   });
 });

@@ -8,30 +8,95 @@ body {
     height: 5rem;
 }
 
-header{
+.header-landing{
     display: flex;
     flex-flow: column nowrap;
-    // justify-content: center;
-    height: 36rem;
-
-    #section{
-      width: 8rem;
-      margin: 2rem;
-    }
+    justify-content: center;
+    height: 90vh;
 
     .logo{
-      width: 12rem;
-      padding: 2rem;
+      padding: 10rem 0 5rem 0;
+      height: 35%;
+    
+      @include tablet{
+        height: 20%;
+        padding: 0;
+      }
     }
+
+    @include tablet{
+      flex-flow: row nowrap;  
+    }
+}
+
+.short-header{
+  height: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+    
+    .logo{
+    padding: 2rem 0;
+    height: 9rem;
+    
+    @include tablet{
+      height: 20%;
+      padding: 0;
+    }
+    }
+}
+
+#section{
+  width: 8rem;
+  margin: 2rem;
+}
+
+.choose {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  text-align: center;
 }
 
 #section, .logo, header p {@include header-flex}
 
-#newsfeed img{
-  width: 100%
+#section {
+  padding: 0.5rem;
 }
 
-footer p{
-  color: #c2c2c2;
-  text-align: center;
+.stories{
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: column nowrap;
+}
+
+a {
+  @include font;
+  &:hover {
+    @include font;
+  }
+}
+
+#story {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 95%;
+  flex: 0 0 100%;
+}
+
+#story p{
+  background: rgba(black, 0.25);
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+footer{ 
+  padding: 2rem 0;
+  
+  p{
+    color: #c2c2c2;
+    text-align: center;
+  }
 }

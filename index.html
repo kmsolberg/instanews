@@ -8,19 +8,22 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
   </head>
   <body>
-    <header>
+    <div class="header-landing">
       <img src= "assets/images/nyt-logo.svg" class="logo">
-      <p>Choose a section:</p>
-      <select name="news-section" id="section">
-        <option value="home">Home</option>
-        <option value="world">World</option>
-        <option value="opinion">Opinion</option>
-        <option value="politics">Politics</option>
-        <option value="technology">Technology</option>
-        <option value="arts">Arts</option>
-        <option value="fashion">Fashion</option>      
-      </select>
-    </header>
+      <div class="choose">
+        <p> Choose a section:</p>
+        <select name="news-section" id="section">
+          <option disabled selected value> Sections... </option>
+          <option value="home">Top Stories</option>
+          <option value="world">World</option>
+          <option value="opinion">Opinion</option>
+          <option value="politics">Politics</option>
+          <option value="technology">Technology</option>
+          <option value="arts">Arts</option>
+          <option value="fashion">Fashion</option>      
+        </select>
+      </div>
+    </div>
     
     <div class="loading"></div>
 
