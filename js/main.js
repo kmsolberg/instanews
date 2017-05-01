@@ -2,6 +2,10 @@ $(function () {
   var storyGrid = "";
   var picture = "";
   var link = "";
+
+  $(function() {
+    $('select').selectric();
+  });
  
   $('#section').change(function (event) {
     var index = 0;
