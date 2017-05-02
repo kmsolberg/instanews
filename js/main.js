@@ -1,19 +1,18 @@
 $(function () {
-  var storyGrid = "";
-  var picture = "";
-  var link = "";
+  var storyGrid = '';
+  var picture = '';
+  var link = '';
 
   $('select').selectric();
  
   $('#section').change(function (event) {
-    var index = 0;
     event.preventDefault();
     $('.header-landing').removeClass().addClass('short-header');
     $('.stories').empty();
     $('.loading').before('<img src="assets/images/ajax-loader.gif" id="loading-gif">');
     var selection = $('#section option').filter(':selected').val();
-    var urlSource = "https://api.nytimes.com/svc/topstories/v2/" + selection + ".json"
-        urlSource += '?' + $.param({'api-key': "c15852cbf6e143a28c25363796863ee0"
+    var urlSource = 'https://api.nytimes.com/svc/topstories/v2/' + selection + '.json'
+        urlSource += '?' + $.param({'api-key': 'c15852cbf6e143a28c25363796863ee0'
         });
       $.ajax({
       url: urlSource,

@@ -1,7 +1,7 @@
 # Project 2: Instanews
 This project is a web application that generates a visual grid of the most recent news stories from the New York Times.  It was designed as an introduction to using Ajax, JSON and APIs.
 
-![Image of Landing Page](/assets/images/landing-page.png)
+![Image of Landing Page](assets/images/landing-page.png)
 
 ## Technologies Used:
 This website has a main HTML page linked to minified CSS and JS files using Gulp.

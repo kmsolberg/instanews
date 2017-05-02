@@ -19,8 +19,7 @@ body {
   justify-content: center;
   height: 90vh;
   overflow:hidden;
-  transform: scaleY(auto);
-  transition: transform 500ms ease;
+  transition: height 500ms ease;
 
   .logo{
     padding: 10rem 0 5rem 0;
@@ -52,7 +51,7 @@ body {
   flex: 0;
   flex-flow: column nowrap;
   justify-content: center;
-  transform: scaleY(auto);
+  // transition: height;
     @include tablet{
       flex-flow: row nowrap;
     }
