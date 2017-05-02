@@ -196,6 +196,11 @@ a {
     position: absolute;
     bottom: -10rem; 
   }
+
+  @include desktop{
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
 }
 
 footer{ 
