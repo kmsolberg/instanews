@@ -1,96 +1,96 @@
 body {
   @include font;
-  background-color: black;
-  box-sizing: border-box;
-  margin: auto;
+    background-color: black;
+    box-sizing: border-box;
+    margin: auto;
 }
 
-#loading-gif{
-    height: 5rem;
+#loading-gif {
+  height: 5rem;
 }
 
-.container{
+.container { 
   width: 100%;
 }
 
-.capitalize{
+.capitalize {
   text-transform: uppercase;
 }
 
 #section, .logo, header p, .selectric {@include header-flex}
 
-.header-landing{
+.header-landing {
   display: flex;
   flex-flow: column nowrap;
   height: 85vh;
 
-  .logo{
-    padding: 10rem 0 1rem 0;
-    height: 35%;
-  
-    @include tablet{
-      height: 11rem;
-      padding: 0;
-    }
+.logo {
+  padding: 10rem 0 1rem 0;
+  height: 35%;
 
-    @include desktop{
-      height: 12rem;
-      padding: 0 3rem 0 2rem;
-    }
+  @include tablet {
+    height: 11rem;
+    padding: 0;
   }
 
-  @include tablet{
+  @include desktop {
+    height: 12rem;
+    padding: 0 3rem 0 2rem;
+  }
+}
+
+  @include tablet {
     flex-flow: row nowrap;
     justify-content: center;
   }
 
-  @include desktop{
+  @include desktop {
     justify-content: flex-start;
   }
 }
 
-.short-header{
+.short-header {
   height: 17rem;
   display: flex;
   flex: 0;
   flex-flow: column nowrap;
   justify-content: center;
 
-    @include tablet{
-      flex-flow: row nowrap;
-      height: 6rem;
-    }
+  @include tablet {
+    flex-flow: row nowrap;
+    height: 6rem;
+  }
 
-    @include desktop{
-      height: 7rem;
-    }
+  @include desktop {
+    height: 7rem;
+  }
     
-    .logo{
-    padding: 2rem 0;
-    height: 9rem;
-    
-      @include tablet{
-        padding: 1.5rem 0;
-        height: 3rem;
-      }
+.logo {
+padding: 2rem 0;
+height: 9rem;
 
-      @include desktop{
-        height: 4rem;
-        padding: 1.5rem 2rem;
-      }
-    }
+  @include tablet {
+    padding: 1.5rem 0;
+    height: 3rem;
+  }
 
-    .choose{
-      padding: 0rem 2rem;
-      font-size: .9rem;
-    }
-
-    @include desktop{
-      justify-content: flex-start;
-    }
+  @include desktop {
+    height: 4rem;
+    padding: 1.5rem 2rem;
+  }
 }
 
-#section{
+.choose {
+  padding: 0rem 2rem;
+  font-size: .9rem;
+}
+
+  @include desktop {
+    justify-content: flex-start;
+  }
+}
+
+#section {
   width: 8rem;
   margin: 2rem;
 
@@ -117,20 +117,20 @@ body {
   padding: 0.5rem;
 }
 
-.selectric{
+.selectric {
   margin: 1rem 0;
 }
 
-.selection-wrapper{
+.selection-wrapper {
   height: 3rem;
 }
 
-.stories{
+.stories {
   display: flex;
   justify-content: flex-end;
   flex-flow: column nowrap;
 
-  @include tablet{
+  @include tablet {
     flex-flow: row wrap;
   }
 }
@@ -138,12 +138,12 @@ body {
 a {
   @include font;
   
-  @include tablet{
+  @include tablet {
     width: 33.333%;
     font-size: 1rem;
   }
 
-  @include desktop{
+  @include desktop {
     width: 25%;
   }
 
@@ -162,7 +162,7 @@ a {
   display: flex;
   flex-direction: column-reverse; 
 
-  @include tablet{
+  @include tablet {
     flex: 0 0 33.3333%;
     height: 19rem;
     align-self: flex-end;
@@ -171,59 +171,59 @@ a {
     transition-duration: 1s;
     transition-timing-function: ease-out;
 
-    &:hover p {
-      transition-duration: 0.5s;
-      transition-timing-function: ease-out;
-      bottom: 0;
-    }
+  &:hover p {
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    bottom: 0;
   }
+}
 
-  @include desktop{
+  @include desktop {
     flex: 0 0 25%;
     height: 23.5rem;
   }
 }
 
-#story p{
+#story p {
   background: rgba(black, 0.25);
   font-size: .9rem;
   line-height: 1.3rem;
   padding: 0.2rem;
   
-  @include tablet{
+  @include tablet {
     font-size: 0.7rem;
     line-height: 1rem;
     position: absolute;
     bottom: -10rem; 
   }
 
-  @include desktop{
+  @include desktop {
     font-size: 0.9rem;
     line-height: 1.5rem;
   }
 }
 
-footer{ 
+footer { 
   padding: 2rem 0;
 
-  @include desktop{
+  @include desktop {
     padding: 1rem 0;
   }
 
-  p{
+  p {
     color: #c2c2c2;
     text-align: center;
     font-size: .9rem;
 
-    @include tablet{
-      font-size: .7rem;
-      padding: 0;
-    }
+  @include tablet {
+    font-size: .7rem;
+    padding: 0;
+  }
     
-    @include desktop{
-      text-align: left;
-      font-size: 0.8rem;
-      padding: 0.5rem 0 0.5rem 2rem;
+  @include desktop {
+    text-align: left;
+    font-size: 0.8rem;
+    padding: 0.5rem 0 0.5rem 2rem;
     } 
   }
 }
